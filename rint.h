@@ -248,12 +248,12 @@ public:
 		__rint<size> l = *this;
 		return l._leftshiftto(arg);
 	}
-	__rint<size>& _rightshift(__rint<size>arg) const
+	__rint<size> _rightshift(__rint<size>arg) const
 	{
 		__rint<size> r = *this;
 		return r._rightshiftto(arg);
 	}
-	const __rint<size> _leftshiftto(__rint<size>arg)
+	const __rint<size>& _leftshiftto(__rint<size>arg)
 	{
 		if (arg.val[0] & 0x80)//negative arg
 		{
@@ -261,7 +261,6 @@ public:
 		}
 		uint32_t byte = (arg._int32() / 8);
 		uint32_t carbyte = size - byte;
-		byte = byte;
 		uint8_t bit = (arg._int8() % 8);
 		uint8_t carbit = 8 - bit;
 
