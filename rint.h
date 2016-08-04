@@ -168,23 +168,7 @@ public:
 	{
 		arg._negto();
 		_addto(arg);
-		/*char carrybit = 0x00;
-		char tempcarrybit = 0x00;
 
-		for (int n = size - 1; n; --n)
-		{
-			tempcarrybit = 0x01 & ((val[n] & arg.val[n]) | (val[n] & carrybit) | (carrybit & arg.val[n]));
-			val[n] = (val[n] & 0xfe) | (val[n] ^ arg.val[n] ^ carrybit);
-			carrybit = tempcarrybit;
-			for (char bit = 0x02; bit; bit <<= 1)
-			{
-				carrybit <<= 1;
-				tempcarrybit = bit & ((val[n] & arg.val[n]) | (val[n] & carrybit) | (carrybit & arg.val[n]));
-				val[n] ^= bit & (arg.val[n] ^ carrybit);
-				carrybit = tempcarrybit;
-			}
-			carrybit >>= 7;
-		}*/
 	}
 	__rint<size> _add(__rint<size>arg) const
 	{
@@ -240,6 +224,7 @@ public:
 			--n;
 			val[n] = ~val[n];
 		}
+		return *this;
 	}
 	__rint<size> _bitand(__rint<size>arg) const
 	{
