@@ -319,7 +319,7 @@ public:
 
 		return *this;
 	}
-	bool _gr(__rint<size>) const;
+	bool _gr(__rint<size) const;
 	bool _le(__rint<size>) const;
 	bool _eq(__rint<size>) const;
 	bool _greq(__rint<size>) const;
